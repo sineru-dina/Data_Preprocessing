@@ -9,6 +9,17 @@ Cyclical features, such as time-related attributes (e.g., months, days, weekdays
 Proper encoding is important for improving both model performance and convergence speed. One widely used technique is transforming the feature using sine and cosine functions, which represent the cyclical nature in two dimensions. 
 This method helps the model better understand patterns like the time of day. Other transformation techniques, like Time2Vector, Dummies, and Radial Basis Function, can also be employed to handle cyclical features.
 
+Given a cyclic feature (e.g., day of the week, month of the year, or hour of the day) with a period $N$:
+
+$$\text{sin\_encoded} = \sin\left( \frac{2 \pi \times X}{N} \right)$$
+
+$$\text{cos\_encoded} = \cos\left( \frac{2 \pi \times X}{N} \right)$$
+
+Where:
+- $X$ is the numerical value of the time feature (e.g., **hour**, **day**, **month**).
+- $N$ is the total number of unique values in the cycle (e.g., **24 for hours**, **7 for days of the week**, **12 for months**).
+- $pi$ is the mathematical constant.
+
 1. **Date Encoding**: 
     - This process involves converting dates into numerical representations that machine learning algorithms can understand and process.
     - Common encoding techniques include:
