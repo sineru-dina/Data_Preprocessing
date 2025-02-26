@@ -11,9 +11,9 @@ This method helps the model better understand patterns like the time of day. Oth
 
 Given a cyclic feature (e.g., day of the week, month of the year, or hour of the day) with a period $N$:
 
-$$\text{sin\_encoded} = \sin\left( \frac{2 \pi \times X}{N} \right)$$
+$${sine_encoded} = \sin\(\frac{2 \pi \times X}{N})$$
 
-$$\text{cos\_encoded} = \cos\left( \frac{2 \pi \times X}{N} \right)$$
+$${cose_encoded} = \cos\(\frac{2 \pi \times X}{N})$$
 
 Where:
 - $X$ is the numerical value of the time feature (e.g., **hour**, **day**, **month**).
