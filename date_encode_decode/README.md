@@ -5,21 +5,6 @@ The goal of this repository is to explore **Cyclical Encoding** strategy for tra
 
 ## Key Concepts
 
-Cyclical features, such as time-related attributes (e.g., months, days, weekdays, hours, minutes, seconds), follow repeating patterns and require specific encoding for deep learning models to effectively capture these cycles. 
-Proper encoding is important for improving both model performance and convergence speed. One widely used technique is transforming the feature using sine and cosine functions, which represent the cyclical nature in two dimensions. 
-This method helps the model better understand patterns like the time of day. Other transformation techniques, like Time2Vector, Dummies, and Radial Basis Function, can also be employed to handle cyclical features.
-
-Given a cyclic feature (e.g., day of the week, month of the year, or hour of the day) with a period $N$:
-
-$${sine_encoded} = \sin\(\frac{2 \pi \times X}{N})$$
-
-$${cose_encoded} = \cos\(\frac{2 \pi \times X}{N})$$
-
-Where:
-- $X$ is the numerical value of the time feature (e.g., **hour**, **day**, **month**).
-- $N$ is the total number of unique values in the cycle (e.g., **24 for hours**, **7 for days of the week**, **12 for months**).
-- $pi$ is the mathematical constant.
-
 1. **Date Encoding**: 
     - This process involves converting dates into numerical representations that machine learning algorithms can understand and process.
     - Common encoding techniques include:
@@ -27,7 +12,24 @@ Where:
         - **Ordinal Encoding**: Representing each component of a date as an integer.
         - **Timestamp Conversion**: Converting dates to Unix timestamps or other numeric formats.
         - **Cyclical Encoding**: Treating certain components like day of the week or month as cyclic features and encoding them accordingly.
-
+     
 2. **Date Decoding**: 
     - Decoding involves converting numerical representations back into readable date or time formats.
     - For example, converting a sine and cosine encoded values from Cyclical Encoding into human-readable date and time, or Unix timestamp back to a human-readable date, or reversing one-hot encoding to identify the actual day of the year.
+
+### Cyclical Encoding
+
+Cyclical features, such as time-related attributes (e.g., months, days, weekdays, hours, minutes, seconds), follow repeating patterns and require specific encoding for deep learning models to effectively capture these cycles. 
+Proper encoding is important for improving both model performance and convergence speed. One widely used technique is transforming the feature using sine and cosine functions, which represent the cyclical nature in two dimensions. 
+This method helps the model better understand patterns like the time of day. Other transformation techniques, like Time2Vector, Dummies, and Radial Basis Function, can also be employed to handle cyclical features.
+
+Given a cyclic feature (e.g., day of the week, month of the year, or hour of the day) with a period $N$:
+
+$${sin/_ encoded} = \sin\(\frac{2 \pi \times X}{N})$$
+
+$${cos/_encoded} = \cos\(\frac{2 \pi \times X}{N})$$
+
+Where:
+- $X$ is the numerical value of the time feature.
+- $N$ is the total number of unique values in the cycle.
+- $pi$ is the mathematical constant.
