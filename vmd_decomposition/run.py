@@ -7,7 +7,7 @@ import visualize
 
 parser = argparse.ArgumentParser(description='Calculate the weighted moving average of a given dataset.')
 
-parser.add_argument('--data_path', type=str, default='data/price_data.csv', help='Path to the price data file')
+parser.add_argument('--data_path', type=str, default='/data/price_data.csv', help='Path to the price data file')
 parser.add_argument('--xseq', type=int, default=256, help='length of the past sequence used for analysis')
 parser.add_argument('--yseq', type=int, default=8, help='length of the future sequence to predict')
 parser.add_argument('--term', type=int, default=98, help='offset or forecasting horizon')
@@ -21,10 +21,10 @@ args = parser.parse_args()
 data_price = dataload.data_load(args.data_path)
 
 # Perform VMD decomposition
-data = vmd.vmd_decomposition(data_price, args.xseq, args.yseq, args.term, args.k, args.be_idx, args.sig_decomp)
+data = vmd.vmd_decomposition(data_price, args.xseq, args.yseq, args.term, args.k)
 
 # Fill NaN values with 0 for plotting
-data.fillna(0, inplace=True)
+data.fillna(0)
 
 # Visualize original and smoothed data
 visualize.plot_vmd(data, args.k)

@@ -7,8 +7,8 @@ import visualize
 
 parser = argparse.ArgumentParser(description='STL Decompostion')
 
-parser.add_argument('--data_path_daily', type=str, default='data/price_data.csv', help='Path to the price data file')
-parser.add_argument('--data_path_monthly', type=str, default='data/price_monthly.csv', help='Path to the monthly price data file')
+parser.add_argument('--data_path_daily', type=str, default='/data/price_data.csv', help='Path to the price data file')
+parser.add_argument('--data_path_monthly', type=str, default='/data/price_monthly.csv', help='Path to the monthly price data file')
 parser.add_argument('--test_date', type=str, default='2024.01.01', help='date until STL method should be used to decompoition the data')
 parser.add_argument('--test_year', type=int, default=2024, help='year until STL method should be used to decompoition the data')
 

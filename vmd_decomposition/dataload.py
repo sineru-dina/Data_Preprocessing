@@ -1,7 +1,10 @@
 import os
 import pandas as pd
 
-def data_load(data_path):
+def data_load(path):
+    parent_folder = os.path.dirname(os.getcwd())
+    data_path = os.path.join(parent_folder + path)
+    
     data = pd.read_csv(data_path, parse_dates=['date'])
 
     return data

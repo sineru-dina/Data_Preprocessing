@@ -2,10 +2,11 @@ import os
 import pandas as pd
 import visualize
 
-curr_wd = os.getcwd()
-data_path = os.path.join(curr_wd + '/data/price_data.csv')
 
-def data_load_daily(data_path):
+def data_load_daily(path):
+    parent_folder = os.path.dirname(os.getcwd())
+    data_path = os.path.join(parent_folder + path)
+    
     data_all = pd.read_csv(data_path,index_col='date', parse_dates=True)
     data_all.index = pd.to_datetime(data_all.index, format="%m/%d/%Y")
     data_price = data_all['price']
@@ -13,7 +14,10 @@ def data_load_daily(data_path):
     
     return data_price
 
-def data_load_monthly(data_path):
+def data_load_monthly(path):
+    parent_folder = os.path.dirname(os.getcwd())
+    data_path = os.path.join(parent_folder + path)
+
     data_all = pd.read_csv(data_path,index_col='date', parse_dates=True)
     data_all.index = pd.to_datetime(data_all.index, format="%m/%d/%Y")
     

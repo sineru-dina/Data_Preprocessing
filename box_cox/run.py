@@ -1,5 +1,5 @@
 import numpy as np
-import scipy.stats as boxcox
+import scipy.stats as stats
 import argparse
 
 import dataload
@@ -8,7 +8,7 @@ import visualize
 
 parser = argparse.ArgumentParser(description='Box-Cox transformation')
 
-parser.add_argument('--data_path', type=str, default='data/vol_data.csv', help='Path to the volume data file')
+parser.add_argument('--data_path', type=str, default='/data/price_data.csv', help='Path to the volume data file')
 parser.add_argument('--lambda_range', type=str, default='-3,3,15', help='Comma-separated string for lambda range (min,max,num)')
 
 args = parser.parse_args()
@@ -23,7 +23,7 @@ lambdas = np.linspace(lambda_min, lambda_max, int(num_lambdas))
 transformed_data = boxcox_transformation(data_vol, lambdas)
 
 ## Find the best lambda
-data_transformed, best_lambda = boxcox(data_vol)
+data_transformed, best_lambda = stats.boxcox(data_vol)
 print(f"Best lambda found: {best_lambda:.4f}")
 
 ## Transform the data using the best lambda
