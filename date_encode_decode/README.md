@@ -14,4 +14,4 @@ This repository contains my learnings and implementations related to **Date Enco
 
 2. **Date Decoding**: 
     - Decoding involves converting numerical representations back into readable date or time formats.
-    - For example, converting a Unix timestamp back to a human-readable date, or reversing one-hot encoding to identify the actual day of the week.
+    - For example, converting a sine and cosine encoded values from Cyclical Encoding, or Unix timestamp back to a human-readable date, or reversing one-hot encoding to identify the actual day of the year.
