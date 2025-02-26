@@ -27,7 +27,7 @@ Given a cyclic feature (e.g., day of the week, month of the year, or hour of the
 
 $${sin\textunderscore encoded} = \sin\(\frac{2 \pi \times X}{N})$$
 
-$${cos\underscore\encoded} = \cos\(\frac{2 \pi \times X}{N})$$
+$${cos\textunderscore encoded} = \cos\(\frac{2 \pi \times X}{N})$$
 
 Where:
 - $X$ is the numerical value of the time feature.
