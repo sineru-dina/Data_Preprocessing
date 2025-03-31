@@ -16,5 +16,5 @@ This repository contains various data preprocessing techniques commonly used in 
 ### 4. **VMD Decomposition (Variational Mode Decomposition)**
    - VMD is an advanced signal decomposition technique that decomposes a signal into several intrinsic mode functions (IMFs), useful for noise reduction and extracting underlying trends from complex data.
 
-### 5. **Cyclical Encoding**
-   - The data_encode_decode module implements Cyclical Encoding, a technique used for encoding cyclical features such as hours of the day, days of the week, or months of the year. This approach is useful in machine learning models, as it ensures that cyclical patterns (e.g., the transition from December to January) are treated as continuous rather than discrete. The encoding uses sine and cosine transformations to map the cyclical features to two continuous values, allowing models to capture their periodic nature effectively.
+### 5. **Data_encode_decode**
+   - This module implements Cyclical Encoding, a technique used for encoding cyclical features such as hours of the day, days of the week, or months of the year. This approach is useful in machine learning models, as it ensures that cyclical patterns (e.g., the transition from December to January) are treated as continuous rather than discrete. The encoding uses sine and cosine transformations to map the cyclical features to two continuous values, allowing models to capture their periodic nature effectively.
